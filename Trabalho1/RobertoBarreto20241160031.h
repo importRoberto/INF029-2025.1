@@ -11,17 +11,17 @@
 //  O aluno deve preencher seus dados abaixo, e implementar as questões do trabalho
 
 //  ----- Dados do Aluno -----
-//  Nome:
-//  email:
-//  Matrícula:
-//  Semestre:
+//  Nome: Roberto Silva Barreto
+//  email: robertoboficial@gmail.com
+//  Matrícula: 20241160031
+//  Semestre: 2025.1
 
 //  Copyright © 2016 Renato Novais. All rights reserved.
 // Última atualização: 07/05/2021
 
 // #################################################
-#ifndef TRABALHO1_PRIMEIROULTIMONOMEMATRICULA_H
-#define TRABALHO1_PRIMEIROULTIMONOMEMATRICULA_H
+#ifndef TRABALHO1_RobertoBarreto20241160031_H
+#define TRABALHO1_RobertoBarreto20241160031_H
 
 typedef struct DQ
 {
