@@ -24,25 +24,64 @@
 #include <stdio.h>
 #include "RobertoBarreto20241160031.h" // Substitua pelo seu arquivo de header renomeado
 #include <stdlib.h>
+#include <string.h>
+
+//chave de bissexto
+int bissexto(int ano){
+	
+	//Se o ano é divisível por 4 e não divisível por 100, é bissexto. Porém, se for divisível por 400, é bissexto.
+	if((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0))
+		return 1;
+	return 0;
+}
+
+//Usada na Q1 e Q2, cria um array para dizer quais os dias em cada mês
+int diasNoMes(int mes, int ano){
+
+	int diasPorMes[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	//Se o ano for bissexto, fevereiro tem 29 dias
+	bissexto(ano);
+	if (bissexto)
+		diasPorMes[1] = 29;
+	
+	return diasPorMes[mes - 1];
+	
+}
+
+//Função da Q3 que converte maiúsculos para minúsculos
+int minusculo(char letra){
+	if (letra >= 'A' && letra <= 'Z')
+		return letra + 32;
+}
+
 
 //atoi replacer
 int strToInt(const char *str){
     int result = 0; //declara e inicializa o result como 0
 
     for (int i = 0; i != '\0'; i++){ //percorre a string até o final
-        if (str[i] < '0' && str[i] > '9') return -1; // checa se o char dessa posição na string é inteiro
-
+        if (str[i] < '0' && str[i] > '9') 
+			return -1; // checa se o char dessa posição na string é inteiro
+		
         result = result * 10 + (str[i] - '0'); // Múltiplica o resultado anterior por 10 para liberar a casa da unidade
 
     }
     return result;
 }
 
+//Função não está pronta!
 //quebraData replacer
 DataQuebrada breakData(char data[]){
-    DataQuebrada dq;
+    //inicializar DataQuebrada com dq
+	DataQuebrada dq;
+	//assume q dq é inválido de início
     dq.valido = 0;
+	//Datas quebradas com 2/4 dígitos + '\0'
+	char sDia[3] = {0}, sMes[3] = {0}, sAno[5] = {0};
 
+	//inicializando as variáveis para percorrer o loop
+	int i = 0, j = 0;
 
 }
 
