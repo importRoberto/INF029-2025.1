@@ -25,6 +25,27 @@
 #include "RobertoBarreto20241160031.h" // Substitua pelo seu arquivo de header renomeado
 #include <stdlib.h>
 
+//atoi replacer
+int strToInt(const char *str){
+    int result = 0; //declara e inicializa o result como 0
+
+    for (int i = 0; i != '\0'; i++){ //percorre a string até o final
+        if (str[i] < '0' && str[i] > '9') return -1; // checa se o char dessa posição na string é inteiro
+
+        result = result * 10 + (str[i] - '0'); // Múltiplica o resultado anterior por 10 para liberar a casa da unidade
+
+    }
+    return result;
+}
+
+//quebraData replacer
+DataQuebrada breakData(char data[]){
+    DataQuebrada dq;
+    dq.valido = 0;
+
+
+}
+
 DataQuebrada quebraData(char data[]);
 
 /*
