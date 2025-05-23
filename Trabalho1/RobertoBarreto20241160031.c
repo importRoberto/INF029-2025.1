@@ -22,7 +22,7 @@
 // #################################################
 
 #include <stdio.h>
-#include "RobertoBarreto20241160031.h" // Substitua pelo seu arquivo de header renomeado
+#include "RobertoBarreto20241160031.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -82,6 +82,50 @@ DataQuebrada breakData(char data[]){
 
 	//inicializando as variáveis para percorrer o loop
 	int i = 0, j = 0;
+
+    //Dia
+    while (data[i] != '\0' && data [i] != '/' && j < 2){
+        if (data[i] < '0' && data[i] > '9')
+            return dq;
+
+        //Copia o caractere da posição i para a posição j. Depois incrementa i e incrementa j.
+        sDia[j++] = sDia[i++];
+    }
+
+    sDia[j] = '\0';
+
+    if (data[i] != '/' || j == 0)
+        return dq;
+    i++;
+
+    //Mês
+    j = 0;
+    while (data[i] != '\0' && data[i] != '/' && j < 2){
+        if (data[i] < '0' && data[i] > '9')
+            return dq;
+        
+        sMes[j++] = sMes[i++];
+    }
+
+    sMes[j] = '\0';
+
+    if (data[i] != '/' || j == 0)
+        return dq;
+    i++;
+
+    //Ano
+    j = 0;
+    while (data[i] != '\0' && j < 4){
+        if (data[i] < '0' && data[i] > '9')
+            return dq;
+        
+        sAno[j++] = sAno[i++];
+    }
+
+    sAno[j] = '\0';
+
+    if (j != 2 && j != 4)
+        return dq;
 
 }
 
