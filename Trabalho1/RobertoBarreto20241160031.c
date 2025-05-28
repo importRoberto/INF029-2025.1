@@ -66,6 +66,33 @@ int minuscular(char ch) {
     return ch;
 }
 
+int calcularTamanho(char palavra[]) {
+    int tamanho = 0;
+    while (palavra[tamanho] != '\0') {
+        tamanho++;
+    }
+    return tamanho;
+}
+
+int buscarEmDirecao(char matriz[8][10], int linha, int coluna, char palavra[], int dx, int dy) {
+    int tamanho = calcularTamanho(palavra);
+
+    for (int i = 0; i < tamanho; i++) {
+        int novaLinha = linha + i * dx;
+        int novaColuna = coluna + i * dy;
+
+        // Verifica limites da matriz
+        if (novaLinha < 0 || novaLinha >= 8 || novaColuna < 0 || novaColuna >= 10)
+            return 0;
+
+        // Verifica caractere da matriz com a letra da palavra
+        if (matriz[novaLinha][novaColuna] != palavra[i])
+            return 0;
+    }
+
+    return 1; // Palavra encontrada nessa direção
+}
+
 /*
  Q1 = validar data
 @objetivo
@@ -357,6 +384,34 @@ int q6(int numerobase, int numerobusca) {
     }
  
     return qtdOcorrencias;
+}
+
+
+/*
+ Q7 = jogo busca palavras
+ @objetivo
+    Verificar se existe uma string em uma matriz de caracteres em todas as direções e sentidos possíves
+ @entrada
+    Uma matriz de caracteres e uma string de busca (palavra).
+ @saida
+    1 se achou 0 se não achou
+ */
+
+int q7(char matriz[8][10], char palavra[]) {
+    // Todas as 8 direções possíveis (linha, coluna)
+    int direcoes[8][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}, {1, 1}, {1, -1}, {-1, -1}, {-1, 1}};
+
+    for (int i = 0; i < 8; i++) {         // linhas
+        for (int j = 0; j < 10; j++) {    // colunas
+            for (int d = 0; d < 8; d++) { // direções
+                if (buscarEmDirecao(matriz, i, j, palavra, direcoes[d][0], direcoes[d][1])) {
+                    return 1; 
+                }
+            }
+        }
+    }
+
+    return 0; 
 }
 
 
