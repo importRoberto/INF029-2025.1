@@ -15,7 +15,7 @@
 //  Nome:      Roberto Silva Barreto
 //  E-mail:    robertoboficial@gmail.com
 //  Matrícula: 20241160031
-//  Semestre:  2024.2
+//  Semestre:  2025.1
 
 //  Copyright © 2016 Renato Novais. All rights reserved.
 //  Última atualização: 07/05/2021 - 19/08/2016
@@ -322,9 +322,6 @@ int q4(char *strTexto, char *strBusca, int posicoes[30]) {
         }
 
     }
-
-    return qtdOcorrencias;
-}
 
 /*
 Q5 = inverte número

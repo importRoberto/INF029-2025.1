@@ -19,9 +19,9 @@
 
 //renomeie o arquivo do include abaixo para trabalho1.h
 #include "RobertoBarreto20241160031.h"
-
-void testSomar();    //função utilizada para testes
-void testFatorial(); //função utilizada para testes
+#include "RobertoBarreto20241160031.c"
+//void testSomar();    //função utilizada para testes
+//void testFatorial(); //função utilizada para testes
 void testQ1();
 void testQ2();
 void testQ3();
@@ -43,7 +43,7 @@ int main()
     testQ7();
 }
 
-void testSomar()
+/*void testSomar()
 {
     printf("%d\n", somar(3, 4) == 7);
     printf("%d\n", somar(-1, -3) == -4);
@@ -61,7 +61,7 @@ void testFatorial()
     printf("%d\n", fatorial(1) == 1);
     printf("%d\n", fatorial(5) == 120);
 }
-
+*/
 void testQ1()
 {
     char str[11];
@@ -143,6 +143,7 @@ void testQ3()
 
 void testQ4()
 {
+    printf("Q4\n");
     char strTexto[250];
     char strBusca[50];
     int posicoes[30];
@@ -176,6 +177,7 @@ void testQ4()
 
 void testQ5()
 {
+    printf("Q5\n");
     printf("%d\n", q5(345) == 543);
     printf("%d\n", q5(78) == 87);
     printf("%d\n", q5(3) == 3);
@@ -184,6 +186,7 @@ void testQ5()
 
 void testQ6()
 {
+    printf("Q6\n");
     printf("%d\n", q6(34567368, 3) == 2);
     printf("%d\n", q6(34567368, 4576) == 0);
     printf("%d\n", q6(3539343, 3) == 4);
@@ -192,6 +195,7 @@ void testQ6()
 
 void testQ7()
 {
+    printf("Q7\n");
     char matrix[8][10] = {
         { 'Q', 'M', 'J', 'D', 'L', 'A', 'Z', 'F', 'C', 'R' },
         { 'N', 'B', 'Y', 'G', 'P', 'S', 'K', 'H', 'E', 'X' },
