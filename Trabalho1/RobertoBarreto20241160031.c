@@ -287,7 +287,7 @@ int q4(char *strTexto, char *strBusca, int posicoes[30]) {
     // Percorre o texto até a posição onde ainda é possível encontrar a string de busca
     for(int i = 0; i < tamTexto - tamBusca; i++) {
         
-        // Variáveis auxiliares
+        // Variáveias auxiliares
         int aux = 0;
         int k = i;
 
