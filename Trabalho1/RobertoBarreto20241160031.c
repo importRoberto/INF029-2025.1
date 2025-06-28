@@ -323,6 +323,9 @@ int q4(char *strTexto, char *strBusca, int posicoes[30]) {
 
     }
 
+    return qtdOcorrencias;
+}
+
 /*
 Q5 = inverte número
  @objetivo
